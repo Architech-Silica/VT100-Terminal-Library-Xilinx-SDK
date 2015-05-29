@@ -1,0 +1,14 @@
+OPTION psf_version = 2.1;
+
+BEGIN LIBRARY VT100
+  OPTION drc = VT100_drc;
+  OPTION copyfiles = all;
+  OPTION REQUIRES_OS = (standalone);
+  OPTION SUPPORTED_PERIPHERALS = (cortexa9);
+  OPTION APP_LINKER_FLAGS = "-Wl,--start-group,-lVT100,-lxil,-lgcc,-lc,--end-group";
+  OPTION desc = "VT100 Terminal Control";
+  OPTION VERSION = 1.0;
+  OPTION NAME = VT100;
+END LIBRARY
+
+
