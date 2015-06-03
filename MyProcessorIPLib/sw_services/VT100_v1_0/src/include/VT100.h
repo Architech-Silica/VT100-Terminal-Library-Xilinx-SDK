@@ -1,69 +1,66 @@
-/*
- * VT100.h
- *
- *  Created on: 29 May 2015
- *      Author: GriffinR
- */
+#ifndef __VT100_H
+#define __VT100_H
 
-#ifndef VT100_H
-#define VT100_H
+#ifndef VT100PRINTF
+#define VT100PRINTF	printf
+#endif
 
 // Function Macros for simple VT100 escape codes
-#define VT100_Black_Text() printf("%c[30m",0x1B)
-#define VT100_Red_Text() printf("%c[31m",0x1B)
-#define VT100_Green_Text() printf("%c[32m",0x1B)
-#define VT100_Yellow_Text() printf("%c[33m",0x1B)
-#define VT100_Blue_Text() printf("%c[34m",0x1B)
-#define VT100_Magenta_Text() printf("%c[35m",0x1B)
-#define VT100_Cyan_Text() printf("%c[36m",0x1B)
-#define VT100_White_Text() printf("%c[37m",0x1B)
-#define VT100_Default_Text() printf("%c[39m",0x1B)
+#define VT100_Black_Text() VT100PRINTF("\x1B[30m")
+#define VT100_Red_Text() VT100PRINTF("\x1B[31m")
+#define VT100_Green_Text() VT100PRINTF("\x1B[32m")
+#define VT100_Yellow_Text() VT100PRINTF("\x1B[33m")
+#define VT100_Blue_Text() VT100PRINTF("\x1B[34m")
+#define VT100_Magenta_Text() VT100PRINTF("\x1B[35m")
+#define VT100_Cyan_Text() VT100PRINTF("\x1B[36m")
+#define VT100_White_Text() VT100PRINTF("\x1B[37m")
+#define VT100_Default_Text() VT100PRINTF("\x1B[39m")
 
-#define VT100_Black_Background() printf("%c[40m",0x1B)
-#define VT100_Red_Background() printf("%c[41m",0x1B)
-#define VT100_Green_Background() printf("%c[42m",0x1B)
-#define VT100_Yellow_Background() printf("%c[43m",0x1B)
-#define VT100_Blue_Background() printf("%c[44m",0x1B)
-#define VT100_Magenta_Background() printf("%c[45m",0x1B)
-#define VT100_Cyan_Background() printf("%c[46m",0x1B)
-#define VT100_White_Background() printf("%c[47m",0x1B)
-#define VT100_Default_Background() printf("%c[49m",0x1B)
+#define VT100_Black_Background() VT100PRINTF("\x1B[40m")
+#define VT100_Red_Background() VT100PRINTF("\x1B[41m")
+#define VT100_Green_Background() VT100PRINTF("\x1B[42m")
+#define VT100_Yellow_Background() VT100PRINTF("\x1B[43m")
+#define VT100_Blue_Background() VT100PRINTF("\x1B[44m")
+#define VT100_Magenta_Background() VT100PRINTF("\x1B[45m")
+#define VT100_Cyan_Background() VT100PRINTF("\x1B[46m")
+#define VT100_White_Background() VT100PRINTF("\x1B[47m")
+#define VT100_Default_Background() VT100PRINTF("\x1B[49m")
 
-#define VT100_Cursor_Home() printf("%c[H",0x1B)
-#define VT100_Cursor_Set_XY_Position(X,Y) printf("%c[%d;%dH",0x1B,X,Y)
-#define VT100_Cursor_Show() printf("%c[?25h",0x1B)
-#define VT100_Cursor_Hide() printf("%c[?25l",0x1B)
-#define VT100_Cursor_Up(Rows) printf("%c[%dA",0x1B,Rows)
-#define VT100_Cursor_Down(Rows) printf("%c[%dB",0x1B,Rows)
-#define VT100_Cursor_Left(Columns) printf("%c[%dC",0x1B,Columns)
-#define VT100_Cursor_Right(Columns) printf("%c[%dD",0x1B,Columns)
+#define VT100_Cursor_Home() VT100PRINTF("\x1B[H")
+#define VT100_Cursor_Set_XY_Position(X,Y) VT100PRINTF("\x1B[%d;%dH",X,Y)
+#define VT100_Cursor_Show() VT100PRINTF("\x1B[?25h")
+#define VT100_Cursor_Hide() VT100PRINTF("\x1B[?25l")
+#define VT100_Cursor_Up(Rows) VT100PRINTF("\x1B[%dA",Rows)
+#define VT100_Cursor_Down(Rows) VT100PRINTF("\x1B[%dB",Rows)
+#define VT100_Cursor_Left(Columns) VT100PRINTF("\x1B[%dC",Columns)
+#define VT100_Cursor_Right(Columns) VT100PRINTF("\x1B[%dD",Columns)
 
-#define VT100_Clear_Line_To_End() printf("%c[0K",0x1B)
-#define VT100_Clear_Line_Up_To_Cursor() printf("%c[1K",0x1B)
-#define VT100_Clear_Line() printf("%c[2K",0x1B)
-#define VT100_Clear_Screen() printf("%c[2J",0x1B)
-#define VT100_Clear_Screen_To_End() printf("%c[J",0x1B)
-#define VT100_Clear_Screen_Up_To_Cursor() printf("%c[1J",0x1B)
+#define VT100_Clear_Line_To_End() VT100PRINTF("\x1B[0K")
+#define VT100_Clear_Line_Up_To_Cursor() VT100PRINTF("\x1B[1K")
+#define VT100_Clear_Line() VT100PRINTF("\x1B[2K")
+#define VT100_Clear_Screen() VT100PRINTF("\x1B[2J")
+#define VT100_Clear_Screen_To_End() VT100PRINTF("\x1B[J")
+#define VT100_Clear_Screen_Up_To_Cursor() VT100PRINTF("\x1B[1J")
 
-#define VT100_Text_Attributes_None() printf("%c[0m",0x1B)
-#define VT100_Text_Attributes_Bold() printf("%c[1m",0x1B)
-#define VT100_Text_Attributes_Dim() printf("%c[2m",0x1B)
-#define VT100_Text_Attributes_Blink() printf("%c[5m",0x1B)
-#define VT100_Text_Attributes_Reverse() printf("%c[7m",0x1B)
-#define VT100_Text_Attributes_Hidden() printf("%c[8m",0x1B)
+#define VT100_Text_Attributes_None() VT100PRINTF("\x1B[0m")
+#define VT100_Text_Attributes_Bold() VT100PRINTF("\x1B[1m")
+#define VT100_Text_Attributes_Dim() VT100PRINTF("\x1B[2m")
+#define VT100_Text_Attributes_Blink() VT100PRINTF("\x1B[5m")
+#define VT100_Text_Attributes_Reverse() VT100PRINTF("\x1B[7m")
+#define VT100_Text_Attributes_Hidden() VT100PRINTF("\x1B[8m")
 
-#define VT100_Mode_Insert() printf("%c[4h",0x1B)
-#define VT100_Mode_Overwrite() printf("%c[4l",0x1B)
-#define VT100_Mode_Scrolling_Smooth() printf("%c[?4h",0x1B)
-#define VT100_Mode_Scrolling_Jump() printf("%c[?4l",0x1B)
+#define VT100_Mode_Insert() VT100PRINTF("\x1B[4h")
+#define VT100_Mode_Overwrite() VT100PRINTF("\x1B[4l")
+#define VT100_Mode_Scrolling_Smooth() VT100PRINTF("\x1B[?4h")
+#define VT100_Mode_Scrolling_Jump() VT100PRINTF("\x1B[?4l")
 
-#define VT100_Editing_Insert_Lines(Lines) printf("%c[%dL",0x1B,Lines)
-#define VT100_Editing_Delete_Lines(Lines) printf("%c[%dM",0x1B,Lines)
-#define VT100_Editing_Delete_Characters(Characters) printf("%c[%dP",0x1B,Characters)
+#define VT100_Editing_Insert_Lines(Lines) VT100PRINTF("\x1B[%dL",Lines)
+#define VT100_Editing_Delete_Lines(Lines) VT100PRINTF("\x1B[%dM",Lines)
+#define VT100_Editing_Delete_Characters(Characters) VT100PRINTF("\x1B[%dP",Characters)
 
 
 
 // Function Prototypes
 
 
-#endif /* VT100_H */
+#endif /* __VT100_H */
