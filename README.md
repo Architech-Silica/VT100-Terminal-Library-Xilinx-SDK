@@ -26,6 +26,7 @@ Many modern terminal applications / plugins now support the VT100 graphics rendi
 
 The supplied library is designed to remove the requirement for the user to remember and type complex VT100 Escape codes during software development, providing instead a series of C Function Macros to simplify the use of VT100 escape codes.
 
+![alt tag](https://raw.github.com/Architech-Silica/VT100-Terminal-Library-Xilinx-SDK/master/Screenshots/Terminal_Screenshot.jpg)
 
 ##Example Library Function Calls
 
@@ -74,6 +75,9 @@ Therefore, for the supplied library, the full installation path would be:
 C:\custom_xilinx_ip\MyProcessorIPLib\sw_services\VT100_v1_0
 </pre>
 
+![alt tag](https://raw.github.com/Architech-Silica/VT100-Terminal-Library-Xilinx-SDK/master/Screenshots/Installation_path.jpg)
+
+
 Once the files are in the correct location, the Xilinx SDK (Eclipse) must be configured to point to this custom IP repository.  This is achieved as follows:
 
 - Open the in the SDK Preferences using the menus, "Window -> Preferences".
@@ -83,8 +87,7 @@ Once the files are in the correct location, the Xilinx SDK (Eclipse) must be con
 - Click the "Rescan Repositories" button.
 - Click "OK" to close the preferences window.
 
-*Please see the supplied screenshots for further guidance*
-
+![alt tag](https://raw.github.com/Architech-Silica/VT100-Terminal-Library-Xilinx-SDK/master/Screenshots/Preferences_Repositories.jpg)
 
 ## Using the VT100 library with a BSP
 To make the VT100 library available in a Xilinx SDK BSP:
@@ -94,7 +97,8 @@ To make the VT100 library available in a Xilinx SDK BSP:
 - Click "OK".
 - The BSP will be automatically recompiled and the VT100 library will be included in the sources.
 
-*Please see the supplied screenshots for further guidance*
+![alt tag](https://raw.github.com/Architech-Silica/VT100-Terminal-Library-Xilinx-SDK/master/Screenshots/BSP_Settings.jpg)
+
 
 ## Contributions
 Code examples are provided for your use, but please feel free to contribute your own code back to this repository via a pull request in the usual fashion.  Please fork from this repo, then create a suitably named branch in your fork before submitting back to this repo.  Please don't submit a pull request from your "master" branch.  Each new addition to the code should belong to its own submitted branch.  Thanks. 
